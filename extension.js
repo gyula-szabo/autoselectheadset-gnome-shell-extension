@@ -25,11 +25,11 @@ const { GLib } = imports.gi;
 
 const AutoSelectHeadsetAsync = function(params, invocation) {
     let [deviceNames] = params;
-    let deviceName = 'headset';
-    if (deviceNames.indexOf('headset') < 0) {
-        deviceName = 'headphones';
-    }
+    let deviceName = 'headphones';
     if (deviceNames.indexOf('headphones') < 0) {
+        deviceName = 'headset';
+    }
+    if (deviceNames.indexOf('headset') < 0) {
         deviceName = 'microphone';
     }
     if (deviceNames.indexOf('microphone') < 0) {
